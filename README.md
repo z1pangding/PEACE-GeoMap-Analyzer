@@ -38,7 +38,7 @@ To bridge this gap, we introduce GeoMap-Agent, the inaugural agent designed for 
 
 
 ## Quick Start
-<details close>
+<details open>
 <summary>Installation</summary>
 
  - Step1: Clone repository

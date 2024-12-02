@@ -14,11 +14,28 @@
   <a href="https://github.com/microsoft/PEACE"><b>[🐱 GitHub Code]</b></a>
 </p>
 
+<p align="center">
+    <img src="./images/Cover_v8.png" width="800">
+</p>
+
 ## Introduction
 Geologic map, as a fundamental diagram in geology science, provides critical insights into the structure and composition of Earth's subsurface and surface. These maps are indispensable in various fields, including disaster detection, resource exploration, and civil engineering.
 
 Despite their significance, current Multimodal Large Language Models (MLLMs) often fall short in geologic map understanding.
 To bridge this gap, we introduce GeoMap-Agent, the inaugural agent designed for geologic map understanding, which features three modules: Hierarchical Information Extraction (HIE), Domain Knowledge Injection (DKI), and Prompt-enhanced Question Answering (PEQA).
+
+### GeoMap-Agent
+
+<p align="center">
+    <img src="./images/GeoMap_Agent_Framework_v2.png" width="800">
+</p>
+
+### GeoMap-Bench
+
+<p align="center">
+    <img src="./images/GeoMap_Benchmark.png" width="800">
+</p>
+
 
 ## Quick Start
 <details close>
@@ -52,10 +69,6 @@ python eval.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
 ```
 
 </details>
-
-## GeoMap-Agent
-
-<embed src="images/GeoMap_Agent_Framework_v2.pdf" width="800px" />
 
 ## Citation
 ```

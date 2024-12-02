@@ -1,15 +1,17 @@
-# PEACE: Empowering Geologic Map Holistic Understanding with MLLMs
+# PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs
 
 <div align="center">
-![](https://img.shields.io/badge/Task-GeologicMap_Understanding-blue)
-![](https://img.shields.io/badge/Data-Released-orange)
-![](https://img.shields.io/badge/Code_License-MIT-green)
+
+![](https://img.shields.io/badge/Task-GeoMap-orange)
+![](https://img.shields.io/badge/Data-Released-green)
+![](https://img.shields.io/badge/Code_License-MIT-blue)
+
 </div>
 
 <p align="center">
   <a href="https://arxiv.org/abs/"><b>[📜 Paper]</b></a> •
-  <a href="https://huggingface.co/microsoft/"><b>[🤗 HF Dataset]</b></a> •
-  <a href="https://github.com/microsoft/PEACE"><b>[🐱 GitHub]</b></a>
+  <a href="https://huggingface.co/microsoft/GeoMap-Bench"><b>[🤗 HF Dataset]</b></a> •
+  <a href="https://github.com/microsoft/PEACE"><b>[🐱 GitHub Code]</b></a>
 </p>
 
 ## Introduction
@@ -19,29 +21,41 @@ Despite their significance, current Multimodal Large Language Models (MLLMs) oft
 To bridge this gap, we introduce GeoMap-Agent, the inaugural agent designed for geologic map understanding, which features three modules: Hierarchical Information Extraction (HIE), Domain Knowledge Injection (DKI), and Prompt-enhanced Question Answering (PEQA).
 
 ## Quick Start
+<details close>
+<summary>Installation</summary>
 
- - Step1: Clone Repo
+ - Step1: Clone repository
 ```
 git clone https://github.com/microsoft/PEACE.git
 ```
 
- - Step2: Download Layout Detection [Model](https://github.com/microsoft/PEACE/releases/download/layout_model/models.zip)
+ - Step2: Download layout detection [models](https://github.com/microsoft/PEACE/releases/download/layout_model/models.zip)
 ```
 wget https://github.com/microsoft/PEACE/releases/download/layout_model/models.zip
 unzip models.zip
 ```
 
- - Step3: Install Dependencies
+ - Step3: Install dependencies
 ```
 pip install -r requirements.txt
 ```
 
  - Step4: Configure API endpoint and key in utils/api.py
 
-## Evaluation
+</details>
+
+<details open>
+<summary>Evaluation</summary>
+
 ```
 python eval.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
 ```
+
+</details>
+
+## GeoMap-Agent
+
+<embed src="images/GeoMap_Agent_Framework_v2.pdf" width="800px" />
 
 ## Citation
 ```
@@ -49,6 +63,5 @@ TBD
 ```
 
 ## License
-```
-This code repository is licensed under the MIT License. The use of Ultralytics library is subject to the its [License](https://github.com/ultralytics/ultralytics/blob/main/LICENSE).
-```
+This repository is licensed under the [MIT](https://github.com/microsoft/PEACE/blob/main/LICENSE) License.
+The use of Ultralytics library is subject to the [AGPL-3.0](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) License.

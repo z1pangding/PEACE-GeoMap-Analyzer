@@ -23,13 +23,13 @@
 - 2024/12/3: Benchmark and Agent released. 
 ## 📖 Table of Contents
 
-- [Overview](#introduction)
-- [GeoMap-Bench](#geoMap-bench)
-- [GeoMap-Agent](#geomap-agent)
-- [Quickstart](#quick-start)
-- [Data Display](#data-display)
-- [Leaderboard](#leaderboard)
-- [Citation](#citation)
+- [Introduction](#introduction)
+- [GeoMap-Bench](#-geomap-bench)
+- [GeoMap-Agent](#-geomap-agent)
+- [Quickstart](#-quick-start)
+- [Data Display](#-data-display)
+- [Leaderboard](#-leaderboard)
+- [Citation](#-citation)
 
 ## 🌟 Introduction
 Geologic map, as a fundamental diagram in geology science, provides critical insights into the structure and composition of Earth's subsurface and surface. These maps are indispensable in various fields, including disaster detection, resource exploration, and civil engineering.
@@ -108,3 +108,6 @@ TBD
 ## License
 This repository is licensed under the [MIT](https://github.com/microsoft/PEACE/blob/main/LICENSE) License.
 The use of Ultralytics library is subject to the [AGPL-3.0](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) License.
+
+
+[def]: #quick-start

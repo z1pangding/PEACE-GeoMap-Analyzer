@@ -1,4 +1,4 @@
-# :world_map: PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs
+# 🗺️ PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs
 
 <div align="center">
 
@@ -18,32 +18,44 @@
     <img src="./images/Cover_v8.png" width="800">
 </p>
 
-## 🧭 Table of Contents
+## 📢 News and Updates
 
-- [Overview](#hourglass-overview)
-- [Quickstart](#fast_forward-quick-start)
+## Table of Contents
+
+- [Overview](#introduction)
+- [GeoMap-Bench](#geoMap-bench)
+- [GeoMap-Agent](#geomap-agent)
+- [Quickstart](#quick-start)
 - [Citation](#citation)
 
-## :hourglass: Overview
+## 🌟 Introduction
 Geologic map, as a fundamental diagram in geology science, provides critical insights into the structure and composition of Earth's subsurface and surface. These maps are indispensable in various fields, including disaster detection, resource exploration, and civil engineering.
 
-Despite their significance, current Multimodal Large Language Models (MLLMs) often fall short in geologic map understanding.
-To bridge this gap, we introduce GeoMap-Agent, the inaugural agent designed for geologic map understanding, which features three modules: Hierarchical Information Extraction (HIE), Domain Knowledge Injection (DKI), and Prompt-enhanced Question Answering (PEQA).
+To quantify this gap, we construct **GeoMap-Bench**, the first-ever bench mark for evaluating MLLMs in geologic map understand ing, which assesses the full-scale abilities in extracting, re ferring, grounding, reasoning, and analyzing. To bridge this gap, we introduce **GeoMap-Agent**, the inaugural agent designed for geologic map understanding.
 
-### GeoMap-Agent
+## 🧭 GeoMap-Bench
+We present GeoMap-Bench, a new benchmark consisting of 124 geologic maps and 3,864 multimodal multiple-choice questions with diverse annotations.
+
+<p align="center">
+    <img src="./images/GeoMap_Bench.png" width="600">
+    <figcaption style="text-align: center;">The distribution of questions in the GeoMap-Bench. It consists of 25 task types, which measure MLLMs abilities across 5 aspects.</figcaption>
+</p>
+
+## 🛠️ GeoMap-Agent
 
 <p align="center">
     <img src="./images/GeoMap_Agent_Framework_v2.png" width="800">
+    <figcaption style="text-align: center;">The overall framework of the proposed GeoMap-Agent.</figcaption>
 </p>
 
-### GeoMap-Bench
+| Method               | Extracting | Grounding | Referring | Reasoning | Analyzing | Overall |
+|----------------------|------------|-----------|-----------|-----------|-----------|---------|
+| Random               | 0          | 0         | 0.250     | 0.250     | 0         | 0.100   |
+| GPT-4o               | 0.219      | 0.128     | 0.378     | 0.507     | 0.612     | 0.369   |
+| GeoMap-Agent         | 0.832      | 0.920     | 0.886     | 0.588     | 0.831     | 0.811   |
 
-<p align="center">
-    <img src="./images/GeoMap_Benchmark.png" width="800">
-</p>
 
-
-## :fast_forward: Quick Start
+## ⏩ Quick Start
 <details open>
 <summary>Installation</summary>
 
@@ -76,8 +88,8 @@ python eval.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
 
 </details>
 
-## Disclaimer
-Please be aware that due to the inherent limitations of large language models, there may be issues such as hallucinations.
+## Limitations
+Due to the inherent limitations of large language models, there may be issues such as hallucinations.
 
 
 ## Citation

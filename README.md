@@ -18,10 +18,10 @@
     <img src="./images/Cover_v8.png" width="800">
 </p>
 
-## Table of Contents
+## 🧭 Table of Contents
 
-- [Overview](#overview)
-- [Quickstart](#quickstart)
+- [Overview](#hourglass-overview)
+- [Quickstart](#fast_forward-quick-start)
 - [Citation](#citation)
 
 ## :hourglass: Overview

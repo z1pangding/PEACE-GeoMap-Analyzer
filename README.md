@@ -19,8 +19,8 @@
 </p>
 
 ## 📢 News and Updates
-
-## Table of Contents
+- 2024/12/3: Benchmark and Agent released. 
+## 📖 Table of Contents
 
 - [Overview](#introduction)
 - [GeoMap-Bench](#geoMap-bench)
@@ -34,19 +34,20 @@ Geologic map, as a fundamental diagram in geology science, provides critical ins
 To quantify this gap, we construct **GeoMap-Bench**, the first-ever bench mark for evaluating MLLMs in geologic map understand ing, which assesses the full-scale abilities in extracting, re ferring, grounding, reasoning, and analyzing. To bridge this gap, we introduce **GeoMap-Agent**, the inaugural agent designed for geologic map understanding.
 
 ## 🧭 GeoMap-Bench
-We present GeoMap-Bench, a new benchmark consisting of 124 geologic maps and 3,864 multimodal multiple-choice questions with diverse annotations.
+We present GeoMap-Bench, a new benchmark consisting of 124 geologic maps and 3,864 multimodal multiple-choice questions with diverse annotations. The distribution of questions in the GeoMap-Bench. It consists of 25 task types that measure critical geological map interpretation abilities across **five** aspects: *grounding, extracting, referring, reasoning, and analyzing*.
 
 <p align="center">
     <img src="./images/GeoMap_Bench.png" width="600">
-    <figcaption style="text-align: center;">The distribution of questions in the GeoMap-Bench. It consists of 25 task types, which measure MLLMs abilities across 5 aspects.</figcaption>
+
 </p>
 
 ## 🛠️ GeoMap-Agent
 
 <p align="center">
     <img src="./images/GeoMap_Agent_Framework_v2.png" width="800">
-    <figcaption style="text-align: center;">The overall framework of the proposed GeoMap-Agent.</figcaption>
 </p>
+
+## 🧮 Leaderboard
 
 | Method               | Extracting | Grounding | Referring | Reasoning | Analyzing | Overall |
 |----------------------|------------|-----------|-----------|-----------|-----------|---------|
@@ -88,7 +89,7 @@ python eval.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
 
 </details>
 
-## Limitations
+## Disclaimer
 Due to the inherent limitations of large language models, there may be issues such as hallucinations.
 
 

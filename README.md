@@ -1,4 +1,4 @@
-# PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs
+# :world_map: PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs
 
 <div align="center">
 
@@ -18,7 +18,13 @@
     <img src="./images/Cover_v8.png" width="800">
 </p>
 
-## Introduction
+## Table of Contents
+
+- [Overview](#overview)
+- [Quickstart](#quickstart)
+- [Citation](#citation)
+
+## :hourglass: Overview
 Geologic map, as a fundamental diagram in geology science, provides critical insights into the structure and composition of Earth's subsurface and surface. These maps are indispensable in various fields, including disaster detection, resource exploration, and civil engineering.
 
 Despite their significance, current Multimodal Large Language Models (MLLMs) often fall short in geologic map understanding.
@@ -37,7 +43,7 @@ To bridge this gap, we introduce GeoMap-Agent, the inaugural agent designed for 
 </p>
 
 
-## Quick Start
+## :fast_forward: Quick Start
 <details open>
 <summary>Installation</summary>
 

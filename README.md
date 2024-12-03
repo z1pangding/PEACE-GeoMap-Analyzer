@@ -70,6 +70,10 @@ python eval.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
 
 </details>
 
+## Disclaimer
+Please be aware that due to the inherent limitations of large language models, there may be issues such as hallucinations.
+
+
 ## Citation
 ```
 TBD

@@ -1,4 +1,5 @@
-# 🗺️ PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs
+# 🗺️ PEACE: Em<a>p</a>owering G<a>e</a>ologic M<a>a</a>p Holisti<a>c</a> Und<a>e</a>rstanding with MLLMs
+<!-- # 🗺️ PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs -->
 
 <div align="center">
 
@@ -26,6 +27,8 @@
 - [GeoMap-Bench](#geoMap-bench)
 - [GeoMap-Agent](#geomap-agent)
 - [Quickstart](#quick-start)
+- [Data Display](#data-display)
+- [Leaderboard](#leaderboard)
 - [Citation](#citation)
 
 ## 🌟 Introduction
@@ -38,7 +41,6 @@ We present GeoMap-Bench, a new benchmark consisting of 124 geologic maps and 3,8
 
 <p align="center">
     <img src="./images/GeoMap_Bench.png" width="600">
-
 </p>
 
 ## 🛠️ GeoMap-Agent
@@ -55,6 +57,11 @@ We present GeoMap-Bench, a new benchmark consisting of 124 geologic maps and 3,8
 | GPT-4o               | 0.219      | 0.128     | 0.378     | 0.507     | 0.612     | 0.369   |
 | GeoMap-Agent         | 0.832      | 0.920     | 0.886     | 0.588     | 0.831     | 0.811   |
 
+## 🔍 Data Display
+We visualize the components of a typical geologic map, highlighting the complex nature of *cartographic generalization*. Additionally, we showcase sample questions from GeoMap-Bench and demonstrate how our GeoMap-Agent integrates various sources of contextual information to address them.
+<p align="center">
+    <img src="./images/GeoMap_Sample.png" width="800">
+</p>
 
 ## ⏩ Quick Start
 <details open>
@@ -89,11 +96,11 @@ python eval.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
 
 </details>
 
-## Disclaimer
-Due to the inherent limitations of large language models, there may be issues such as hallucinations.
+## ⚠️ Disclaimer
+Due to the inherent limitations of large language models, issues such as hallucinations may occur.
 
 
-## Citation
+## 🔗 Citation
 ```
 TBD
 ```

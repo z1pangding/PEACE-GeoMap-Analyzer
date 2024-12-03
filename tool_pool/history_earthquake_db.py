@@ -1,7 +1,7 @@
 import pandas as pd
 
 class history_earthquake_db:
-    def __init__(self, db_path="./dependencies/knowledge/earthquake_CN_1970_4.5mag.csv"):
+    def __init__(self, db_path="./dependencies/knowledge/earthquake_1970_4.5mag.csv"):
         self.earthquake_db = pd.read_csv(db_path)
 
     def get_earthquake_history(self, min_lon, min_lat, max_lon, max_lat):

@@ -20,10 +20,10 @@
 </p>
 
 ## 📢 News and Updates
-- 2024/12/3: Benchmark and Agent released. 
+- 2024/12/3: 🔥🔥🔥Benchmark and Agent released. 
 ## 📖 Table of Contents
 
-- [Introduction](#introduction)
+- [Introduction](#-introduction)
 - [GeoMap-Bench](#-geomap-bench)
 - [GeoMap-Agent](#-geomap-agent)
 - [Quickstart](#-quick-start)
@@ -34,16 +34,15 @@
 ## 🌟 Introduction
 Geologic map, as a fundamental diagram in geology science, provides critical insights into the structure and composition of Earth's subsurface and surface. These maps are indispensable in various fields, including disaster detection, resource exploration, and civil engineering.
 
-To quantify this gap, we construct **GeoMap-Bench**, the first-ever bench mark for evaluating MLLMs in geologic map understand ing, which assesses the full-scale abilities in extracting, re ferring, grounding, reasoning, and analyzing. To bridge this gap, we introduce **GeoMap-Agent**, the inaugural agent designed for geologic map understanding.
-
 ## 🧭 GeoMap-Bench
-We present GeoMap-Bench, a new benchmark consisting of 124 geologic maps and 3,864 multimodal multiple-choice questions with diverse annotations. The distribution of questions in the GeoMap-Bench. It consists of 25 task types that measure critical geological map interpretation abilities across **five** aspects: *grounding, extracting, referring, reasoning, and analyzing*.
+We present **GeoMap-Bench**, a new benchmark consisting of 124 geologic maps and 3,864 multimodal multiple-choice questions with diverse annotations. The distribution of questions in the GeoMap-Bench. It consists of 25 task types that measure critical geological map interpretation abilities across **five** aspects: *grounding, extracting, referring, reasoning, and analyzing*.
 
 <p align="center">
     <img src="./images/GeoMap_Bench.png" width="600">
 </p>
 
 ## 🛠️ GeoMap-Agent
+We introduce **GeoMap-Agent**, the inaugural agent designed for geologic map understanding, which features three modules: Hierarchical Information Extraction(HIE), Domain Knowledge Injection (DKI), and Prompt-enhanced Question Answering (PEQA). Inspired by the interdisciplinary collaboration among human scientists, an AI expert group acts as consultants, utilizing a diverse tool pool to comprehensively analyze questions.
 
 <p align="center">
     <img src="./images/GeoMap_Agent_Framework_v2.png" width="800">

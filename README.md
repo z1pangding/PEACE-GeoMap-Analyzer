@@ -79,7 +79,7 @@ cd PEACE
  - Step2: Download layout detection [models](https://github.com/microsoft/PEACE/releases/download/layout_model/models.zip)
 ```
 wget https://github.com/microsoft/PEACE/releases/download/layout_model/models.zip
-unzip models.zip -d dependencies/
+unzip models.zip -d dependencies
 ```
 
  - Step3: Install dependencies
@@ -87,7 +87,13 @@ unzip models.zip -d dependencies/
 pip install -r requirements.txt
 ```
 
- - Step4: Configure API endpoint and key in utils/api.py
+ - Step4: Download GeoMap-Bench dataset
+```
+git lfs install
+git clone https://huggingface.co/datasets/microsoft/PEACE data
+```
+
+ - Step5: Configure API endpoint and key in utils/api.py
 
 </details>
 

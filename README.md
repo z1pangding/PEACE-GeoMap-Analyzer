@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="https://arxiv.org/abs/"><b>[📜 Paper]</b></a> •
-  <a href="https://huggingface.co/microsoft/PEACE"><b>[🤗 HF Dataset]</b></a> •
+  <a href="https://huggingface.co/datasets/microsoft/PEACE"><b>[🤗 HF Dataset]</b></a> •
   <a href="https://github.com/microsoft/PEACE"><b>[🐱 GitHub Code]</b></a>
 </p>
 
 <p align="center">
-    <img src="./images/Cover_v8.png" width="800">
+    <img src="./images/Cover.png" width="800">
 </p>
 
 ## 📢 News and Updates

@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://arxiv.org/abs/"><b>[📜 Paper]</b></a> •
-  <a href="https://huggingface.co/microsoft/GeoMap-Bench"><b>[🤗 HF Dataset]</b></a> •
+  <a href="https://huggingface.co/microsoft/PEACE"><b>[🤗 HF Dataset]</b></a> •
   <a href="https://github.com/microsoft/PEACE"><b>[🐱 GitHub Code]</b></a>
 </p>
 

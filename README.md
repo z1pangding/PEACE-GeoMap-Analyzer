@@ -73,12 +73,13 @@ We visualize the components of a typical geologic map, highlighting the complex 
  - Step1: Clone repository
 ```
 git clone https://github.com/microsoft/PEACE.git
+cd PEACE
 ```
 
  - Step2: Download layout detection [models](https://github.com/microsoft/PEACE/releases/download/layout_model/models.zip)
 ```
 wget https://github.com/microsoft/PEACE/releases/download/layout_model/models.zip
-unzip models.zip
+unzip models.zip -d dependencies/
 ```
 
  - Step3: Install dependencies

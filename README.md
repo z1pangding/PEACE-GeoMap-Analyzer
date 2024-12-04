@@ -1,5 +1,5 @@
-# 🗺️ PEACE: Em<a>p</a>owering G<a>e</a>ologic M<a>a</a>p Holisti<a>c</a> Und<a>e</a>rstanding with MLLMs
-<!-- # 🗺️ PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs -->
+# PEACE: Em<a>p</a>owering G<a>e</a>ologic M<a>a</a>p Holisti<a>c</a> Und<a>e</a>rstanding with MLLMs
+<!-- # PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs -->
 
 <div align="center">
 
@@ -20,28 +20,31 @@
 </p>
 
 ## 📢 News and Updates
-- 2024/12/3: 🔥🔥🔥Benchmark and Agent released. 
+- 2024/12/5: 🔥GitHub Code repo (GeoMap-Agent) released.
+- 2024/12/5: 🔥HuggingFace Dataset repo (GeoMap-Bench) released.
+- 2024/12/5: 🔥Arxiv paper (PEACE) released.
 ## 📖 Table of Contents
 
 - [Introduction](#-introduction)
 - [GeoMap-Bench](#-geomap-bench)
 - [GeoMap-Agent](#-geomap-agent)
-- [Quickstart](#-quick-start)
-- [Data Display](#-data-display)
 - [Leaderboard](#-leaderboard)
+- [Data Display](#-data-display)
+- [Quickstart](#-quick-start)
+- [Disclaimer](#-disclaimer)
 - [Citation](#-citation)
 
 ## 🌟 Introduction
 Geologic map, as a fundamental diagram in geology science, provides critical insights into the structure and composition of Earth's subsurface and surface. These maps are indispensable in various fields, including disaster detection, resource exploration, and civil engineering.
 
-## 🧭 GeoMap-Bench
+## 📖 GeoMap-Bench
 We present **GeoMap-Bench**, a new benchmark consisting of 124 geologic maps and 3,864 multimodal multiple-choice questions with diverse annotations. The distribution of questions in the GeoMap-Bench. It consists of 25 task types that measure critical geological map interpretation abilities across **five** aspects: *grounding, extracting, referring, reasoning, and analyzing*.
 
 <p align="center">
     <img src="./images/GeoMap_Bench.png" width="600">
 </p>
 
-## 🛠️ GeoMap-Agent
+## 🌍 GeoMap-Agent
 We introduce **GeoMap-Agent**, the inaugural agent designed for geologic map understanding, which features three modules: Hierarchical Information Extraction(HIE), Domain Knowledge Injection (DKI), and Prompt-enhanced Question Answering (PEQA). Inspired by the interdisciplinary collaboration among human scientists, an AI expert group acts as consultants, utilizing a diverse tool pool to comprehensively analyze questions.
 
 <p align="center">
@@ -49,6 +52,7 @@ We introduce **GeoMap-Agent**, the inaugural agent designed for geologic map und
 </p>
 
 ## 🧮 Leaderboard
+Through comprehensive experiments, GeoMap-Agent achieves an overall score of 0.811 on GeoMap-Bench, significantly outperforming 0.369 of GPT-4o.
 
 | Method               | Extracting | Grounding | Referring | Reasoning | Analyzing | Overall |
 |----------------------|------------|-----------|-----------|-----------|-----------|---------|
@@ -95,7 +99,7 @@ python eval.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
 
 </details>
 
-## ⚠️ Disclaimer
+## ⚡ Disclaimer
 Due to the inherent limitations of large language models, issues such as hallucinations may occur.
 
 

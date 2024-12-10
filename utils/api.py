@@ -12,14 +12,14 @@ import openai
 from openai import AzureOpenAI
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 
-gpt_endpoint = ""# to be filled.
+azure_endpoint = ""# to be filled.
 identity_id = ""# to be filled.
 token_provider = get_bearer_token_provider(
     DefaultAzureCredential(managed_identity_client_id=identity_id),
     "https://cognitiveservices.azure.com/.default")
 api_version = "2024-08-01-preview"
 client = AzureOpenAI(
-    azure_endpoint=gpt_endpoint,
+    azure_endpoint=azure_endpoint,
     azure_ad_token_provider=token_provider,
     api_version=api_version,
     max_retries=0,
@@ -32,6 +32,7 @@ def answer_wrapper(messages, max_tks=2048, temperature=0.0, structured=False, to
     answer = None
     for i in range(max_trial):
         try:
+            response = None
             if tools is not None:
                 response = client.chat.completions.create(
                     model=models[current],

@@ -82,9 +82,9 @@ git lfs install
 git clone https://huggingface.co/datasets/microsoft/PEACE data
 ```
 
- - Step3: Download layout detection [models](https://1drv.ms/u/s!AgRA5UKLXIyuiWIc-B8QJ0zj7xhx?e=gI1OL7)
+ - Step3: Download layout detection [models](https://1drv.ms/u/s!AgRA5UKLXIyuiWXYMkm2F1eB1AA-?e=ddQh3J)
 ```
-wget -O models.zip https://ypocha.bn.files.1drv.com/y4mPknOtUu-Jnyfbrz2fsEL4mfJlOap3BrXsdouC8abut-97iVHuJfKKp1OOmOCed9qdamO7R2Ww_ZDfa5MpF2tYTlfwbLBYYIyjVHSlk8LQ5UL_QFJDPc_i-4_tWw5hvBXZ65ORwabWAXmT1UnLMukMazjaDXoqV3WHGwcWt96eicJliG_3TmxWn_dqCbIApxzoFtmMZG03KKYzmARXVaUcQ
+wget -O models.zip https://xqocha.bn.files.1drv.com/y4madviPzB-SHaZ6mqGYhJskMw7q08hW368t0bIQRR3hJbIkv3pe8DdE5As3ioUkUg_2wmiygGve-FA7lKX6bjqyPM8inYO104zsdQViY-d6NDKgvgWXiqTX0n-PmXteh0xTwdO2oUfEKycLSzPYhB1Z1SkjUiRDfJksMGb-5iMfb7vu3mp4V-g62rMhzYweiv6rMQ5zkOMqh-Y1JnRhkzaVTuBgJeemG4BAdMVj73a4QI
 unzip models.zip -d dependencies
 ```
 

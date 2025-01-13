@@ -10,7 +10,7 @@
 </div>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/"><b>[📜 Paper]</b></a> •
+  <a href="https://arxiv.org/abs/2501.06184"><b>[📜 Paper]</b></a> •
   <a href="https://huggingface.co/datasets/microsoft/PEACE"><b>[🤗 HF Dataset]</b></a> •
   <a href="https://github.com/microsoft/PEACE"><b>[🐱 GitHub Code]</b></a>
 </p>

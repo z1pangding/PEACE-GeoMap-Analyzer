@@ -20,9 +20,9 @@
 </p>
 
 ## 📢 News and Updates
-- 2024/12/5: 🔥GitHub Code repo (GeoMap-Agent) released.
-- 2024/12/5: 🔥HuggingFace Dataset repo (GeoMap-Bench) released.
-- 2024/12/5: 🔥Arxiv paper (PEACE) released.
+- 2025/01/10: 🔥GitHub Code repo (GeoMap-Agent) released.
+- 2025/01/10: 🔥HuggingFace Dataset repo (GeoMap-Bench) released.
+- 2025/01/13: 🔥Arxiv paper (PEACE) released.
 ## 📖 Table of Contents
 
 - [Introduction](#-introduction)

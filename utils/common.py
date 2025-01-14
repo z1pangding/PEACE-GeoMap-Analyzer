@@ -4,8 +4,8 @@ import ee
 from datetime import date
 import api
 
-echo = True
-model_name = "gpt-4o_1"
+echo = False
+model_name = "gpt-4o"
 dataset_source = "usgs"
 
 # initialize Google Earth Engine.

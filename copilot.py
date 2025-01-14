@@ -45,8 +45,8 @@ def copilot(image_path, question, question_type, copilot_modes=["HIE", "DKI", "P
 
 
 if __name__ == "__main__":
-    image_path = "sample.jpg"
-    question = "你知道这张地图的图幅名称吗？"
+    image_path = "images/sample_usgs.jpg"
+    question = "What is the title of this map?"
     question_type = "extracting-sheet_name"
     copilot_modes = ["HIE", "DKI", "PEQA"]
     answer = copilot(image_path, question, question_type, copilot_modes)

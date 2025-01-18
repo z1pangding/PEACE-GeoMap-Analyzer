@@ -180,7 +180,8 @@ class Events:
         enabled (bool): A flag to enable or disable Events based on certain conditions.
     """
 
-    url = "https://www.google-analytics.com/mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw"
+    # remove it.
+    url = ""
 
     def __init__(self):
         """Initializes the Events object with default values for events, rate_limit, and metadata."""
@@ -196,6 +197,8 @@ class Events:
             "session_id": round(random.random() * 1e15),
             "engagement_time_msec": 1000,
         }
+        # remove it.
+        """
         self.enabled = (
             SETTINGS["sync"]
             and RANK in (-1, 0)
@@ -203,6 +206,8 @@ class Events:
             and ONLINE
             and (is_pip_package() or get_git_origin_url() == "https://github.com/ultralytics/ultralytics.git")
         )
+        """
+        self.enabled = False
 
     def __call__(self, cfg):
         """

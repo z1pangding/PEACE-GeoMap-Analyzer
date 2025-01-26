@@ -112,7 +112,12 @@ Due to the inherent limitations of large language models, issues such as halluci
 
 ## 🔗 Citation
 ```
-TBD
+@article{huang2025peace,
+  title={PEACE: Empowering Geologic Map Holistic Understanding with MLLMs},
+  author={Huang, Yangyu and Gao, Tianyi and Xu, Haoran and Zhao, Qihao and Song, Yang and Gui, Zhipeng and Lv, Tengchao and Chen, Hao and Cui, Lei and Li, Scarlett and others},
+  journal={arXiv preprint arXiv:2501.06184},
+  year={2025}
+}
 ```
 
 ## License

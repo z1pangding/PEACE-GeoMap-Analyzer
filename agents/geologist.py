@@ -23,7 +23,7 @@ class geologist_agent:
 
     def get_legend_metadata(self, legend_image_path, legend_bndbox):
         legend_image = cv2.imread(legend_image_path)
-        legends = self.map_legend_detector.detect(legend_image_path, legend_bndbox)
+        legends = self.map_legend_detector.detect(legend_image_path)
 
         # calculate text bndbox in legend.
         legend_units = legends.values()

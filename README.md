@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-    <img src="./images/Cover.png" width="800">
+    <img src="./images/PEACE_Cover.png" width="800">
 </p>
 
 ## 📢 News and Updates
@@ -49,7 +49,7 @@ We present **GeoMap-Bench**, a new benchmark consisting of 124 geologic maps and
 We introduce **GeoMap-Agent**, the inaugural agent designed for geologic map understanding, which features three modules: Hierarchical Information Extraction(HIE), Domain Knowledge Injection (DKI), and Prompt-enhanced Question Answering (PEQA). Inspired by the interdisciplinary collaboration among human scientists, an AI expert group acts as consultants, utilizing a diverse tool pool to comprehensively analyze questions.
 
 <p align="center">
-    <img src="./images/GeoMap_Agent_Framework_v2.png" width="800">
+    <img src="./images/GeoMap_Agent.png" width="800">
 </p>
 
 ## 🧮 Leaderboard

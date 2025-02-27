@@ -23,6 +23,7 @@
 - 2025/01/10: 🔥GitHub Code repo (GeoMap-Agent) released.
 - 2025/01/10: 🔥HuggingFace Dataset repo (GeoMap-Bench) released.
 - 2025/01/13: 🔥Arxiv paper (PEACE) released.
+- 2025/02/27: 🔥Accepted by CVPR'25.
 ## 📖 Table of Contents
 
 - [Introduction](#-introduction)

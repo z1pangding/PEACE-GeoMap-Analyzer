@@ -84,7 +84,7 @@ git lfs install
 git lfs clone https://huggingface.co/datasets/microsoft/PEACE data
 ```
 
- - Step3: Download layout detection [models](https://1drv.ms/u/s!AgRA5UKLXIyuiWXYMkm2F1eB1AA-?e=ddQh3J)
+ - Step3: Download layout detection models
 ```
 pip install gdown
 gdown https://drive.google.com/uc?id=1f7dUdfA_W8He9czG6SoYQBmUsSPrA6MZ

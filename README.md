@@ -86,8 +86,8 @@ git lfs clone https://huggingface.co/datasets/microsoft/PEACE data
 
  - Step3: Download layout detection [models](https://1drv.ms/u/s!AgRA5UKLXIyuiWXYMkm2F1eB1AA-?e=ddQh3J)
 ```
-# https://onedrive.live.com/?cid=AE8C5C8B42E54004&id=AE8C5C8B42E54004%211253&parId=AE8C5C8B42E54004%211252&o=OneUp
-wget -O models.zip https://xqocha.bn.files.1drv.com/y4madviPzB-SHaZ6mqGYhJskMw7q08hW368t0bIQRR3hJbIkv3pe8DdE5As3ioUkUg_2wmiygGve-FA7lKX6bjqyPM8inYO104zsdQViY-d6NDKgvgWXiqTX0n-PmXteh0xTwdO2oUfEKycLSzPYhB1Z1SkjUiRDfJksMGb-5iMfb7vu3mp4V-g62rMhzYweiv6rMQ5zkOMqh-Y1JnRhkzaVTuBgJeemG4BAdMVj73a4QI
+pip install gdown
+gdown https://drive.google.com/uc?id=1f7dUdfA_W8He9czG6SoYQBmUsSPrA6MZ
 unzip models.zip -d dependencies
 ```
 

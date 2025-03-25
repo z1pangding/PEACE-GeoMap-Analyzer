@@ -205,7 +205,7 @@ def calculate_metrics(qa_path, dataset_source):
     #black_qt_list = ("analyzing-earthquake_risk",)
 
     for idx, row in tqdm(data.iterrows(), total=len(data)):
-        image_path = os.path.join(f"../benchmark/data/{dataset_source}_images", row["img_path"])
+        image_path = os.path.join(f"./data/{dataset_source}_images", row["img_path"])
         qt = row["type"]
         question = row["question"]
         answer = row["answer"]

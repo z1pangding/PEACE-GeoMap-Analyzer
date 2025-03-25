@@ -24,6 +24,7 @@
 - 2025/01/10: 🔥HuggingFace Dataset repo (GeoMap-Bench) released.
 - 2025/01/13: 🔥Arxiv paper (PEACE) released.
 - 2025/02/27: 🔥Accepted by CVPR'25.
+- 2025/03/25: 🔥Add metrics measurement script.
 ## 📖 Table of Contents
 
 - [Introduction](#-introduction)
@@ -104,6 +105,7 @@ pip install -r requirements.txt
 
 ```
 python eval.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
+python calc_metrics.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
 ```
 
 </details>

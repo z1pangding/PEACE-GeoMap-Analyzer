@@ -106,7 +106,7 @@ def local_image_to_data_url(image_path):
     if os.path.getsize(image_path) >= api_image_size_limit:
         img = cv2.imread(image_path)
         h, w, _ = img.shape
-        resized_img = cv2.resize(img, (h//2, w//2))
+        resized_img = cv2.resize(img, (w//2, h//2))
         resized_img_rgb = cv2.cvtColor(resized_img, cv2.COLOR_BGR2RGB)
         return input_image_to_data_url(resized_img_rgb)
 

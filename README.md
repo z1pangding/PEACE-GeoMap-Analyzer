@@ -1,13 +1,11 @@
 # Em<a>p</a>owering G<a>e</a>ologic M<a>a</a>p Holisti<a>c</a> Und<a>e</a>rstanding with MLLMs
 <!-- # PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs -->
 
-<div align="center">
-
- ![Task](https://img.shields.io/badge/Task-GeoMap-orange) 
- ![Data](https://img.shields.io/badge/Data-Released-green) 
- ![Code](https://img.shields.io/badge/Code_License-MIT-blue) 
-
-</div>
+<p align="center">
+ <img src="https://img.shields.io/badge/Task-GeoMap-orange" alt="Task" /> 
+ <img src="https://img.shields.io/badge/Data-Released-green" alt="Data" /> 
+ <img src="https://img.shields.io/badge/Code_License-MIT-blue" alt="Code" />
+</p>
 
 <p align="center">
   <a href="https://arxiv.org/abs/2501.06184"><b>[📜 Paper]</b></a> •

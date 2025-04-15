@@ -70,41 +70,52 @@ We visualize the components of a typical geologic map, highlighting the complex 
 <details open>
 <summary>Installation</summary>
 
- - Step1: Clone GeoMap-Agent code repository
-```
-git clone https://github.com/microsoft/PEACE.git
-cd PEACE
-```
+<ul><li>Step1: Clone GeoMap-Agent code repository</li></ul>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight">
+<code>git clone https://github.com/microsoft/PEACE.git
+cd PEACE</code>
+</pre>
+</div>
 
- - Step2: Clone GeoMap-Bench dataset repository
-```
-git lfs install
-git lfs clone https://huggingface.co/datasets/microsoft/PEACE data
-```
+<ul><li>Step2: Clone GeoMap-Bench dataset repository</li></ul>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight">
+<code>git lfs install
+git lfs clone https://huggingface.co/datasets/microsoft/PEACE data</code>
+</pre>
+</div>
 
- - Step3: Download layout detection models
-```
-pip install gdown
+<ul><li>Step3: Download layout detection models</li></ul>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight">
+<code>pip install gdown
 gdown https://drive.google.com/uc?id=1f7dUdfA_W8He9czG6SoYQBmUsSPrA6MZ
-unzip models.zip -d dependencies
-```
+unzip models.zip -d dependencies</code>
+</pre>
+</div>
 
- - Step4: Install dependencies
-```
-pip install -r requirements.txt
-```
+<ul><li>Step4: Install dependencies</li></ul>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight">
+<code>pip install -r requirements.txt</code>
+</pre>
+</div>
 
- - Step5: Configure LLMs API endpoint and key in utils/api.py
+<ul><li>Step5: Configure LLMs API endpoint and key in utils/api.py</li></ul>
 
 </details>
+
 
 <details open>
 <summary>Evaluation</summary>
 
-```
-python eval.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
-python calc_metrics.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
-```
+ <div class="language-plaintext highlighter-rouge">
+<pre class="highlight">
+<code>python eval.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
+python calc_metrics.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs</code>
+</pre>
+</div>
 
 </details>
 

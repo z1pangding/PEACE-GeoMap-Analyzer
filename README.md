@@ -1,11 +1,11 @@
-# PEACE: Em<a>p</a>owering G<a>e</a>ologic M<a>a</a>p Holisti<a>c</a> Und<a>e</a>rstanding with MLLMs
+# Em<a>p</a>owering G<a>e</a>ologic M<a>a</a>p Holisti<a>c</a> Und<a>e</a>rstanding with MLLMs
 <!-- # PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs -->
 
 <div align="center">
 
-![](https://img.shields.io/badge/Task-GeoMap-orange)
-![](https://img.shields.io/badge/Data-Released-green)
-![](https://img.shields.io/badge/Code_License-MIT-blue)
+ ![Task](https://img.shields.io/badge/Task-GeoMap-orange) 
+ ![Data](https://img.shields.io/badge/Data-Released-green) 
+ ![Code](https://img.shields.io/badge/Code_License-MIT-blue) 
 
 </div>
 
@@ -124,9 +124,6 @@ Due to the inherent limitations of large language models, issues such as halluci
 }
 ```
 
-## License
+## 👀 License
 This repository is licensed under the [MIT](https://github.com/microsoft/PEACE/blob/main/LICENSE) License.
 The use of Ultralytics library is subject to the [AGPL-3.0](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) License.
-
-
-[def]: #quick-start

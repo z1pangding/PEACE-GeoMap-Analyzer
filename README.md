@@ -11,6 +11,7 @@
   <a href="https://arxiv.org/abs/2501.06184"><b>[📜 Paper]</b></a> •
   <a href="https://huggingface.co/datasets/microsoft/PEACE"><b>[🤗 HF Dataset]</b></a> •
   <a href="https://github.com/microsoft/PEACE"><b>[🐱 GitHub Code]</b></a>
+  <a href="https://www.youtube.com/watch?v=NukDoCJgU-s"><b>[🎞️ YouTube Video]</b></a>
 </p>
 
 <p align="center">
@@ -23,6 +24,7 @@
 - 2025/01/13: 🔥Arxiv paper (PEACE) released.
 - 2025/02/27: 🔥Accepted by CVPR'25.
 - 2025/03/25: 🔥Add metrics measurement script.
+- 2025/04/22: 🔥Add interactive demo video.
 ## 📖 Table of Contents
 
 - [Introduction](#-introduction)

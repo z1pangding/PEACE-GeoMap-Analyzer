@@ -12,6 +12,7 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 import torchvision
+torchvision.disable_beta_transforms_warning()
 
 from ultralytics.data.augment import LetterBox
 from ultralytics.engine.predictor import BasePredictor

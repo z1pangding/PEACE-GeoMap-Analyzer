@@ -418,6 +418,7 @@ def check_torchvision():
     """
 
     import torchvision
+    torchvision.disable_beta_transforms_warning()
 
     # Compatibility table
     compatibility_table = {"2.0": ["0.15"], "1.13": ["0.14"], "1.12": ["0.13"]}

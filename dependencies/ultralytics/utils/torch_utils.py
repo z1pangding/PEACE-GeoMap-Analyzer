@@ -15,6 +15,7 @@ import torch.distributed as dist
 import torch.nn as nn
 import torch.nn.functional as F
 import torchvision
+torchvision.disable_beta_transforms_warning()
 
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, __version__
 from ultralytics.utils.checks import PYTHON_VERSION, check_version

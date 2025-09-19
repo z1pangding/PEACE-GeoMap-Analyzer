@@ -2,6 +2,7 @@
 
 import torch
 import torchvision
+torchvision.disable_beta_transforms_warning()
 
 from ultralytics.data import ClassificationDataset, build_dataloader
 from ultralytics.engine.trainer import BaseTrainer

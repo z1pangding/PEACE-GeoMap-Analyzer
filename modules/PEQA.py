@@ -8,7 +8,8 @@ class prompt_enhanced_QA:
         relation_path = os.path.join(common.cache_path(), "component", "relations.json")
         self.components = list(prompt.components)
         if os.path.exists(relation_path):
-            self.component_relations = json.loads(open(relation_path).read())
+            with open(relation_path, "r", encoding="utf-8") as f:
+                self.component_relations = json.loads(f.read())
         else:
             examples = [
                 {"component1": "main_map", "component2": "legend", "relation": "XXX"},
@@ -32,7 +33,8 @@ class prompt_enhanced_QA:
     def select(self, question, question_type):
         component_path = os.path.join(common.cache_path(), "component", question_type + ".json")
         if os.path.exists(component_path):
-            selected_components = json.loads(open(component_path).read())
+            with open(component_path, "r", encoding="utf-8") as f:
+                selected_components = json.loads(f.read())
             return selected_components
 
         examples = {"1": "XXX", "2": "XXX"}
@@ -57,21 +59,34 @@ class prompt_enhanced_QA:
             f.write(json.dumps(selected_components, indent=4, ensure_ascii=False))
         return selected_components
     
-    def answer(self, information, knowledge, enhance_prompt, image_path, question, question_type):
+    def answer(self, information, knowledge, enhance_prompt, image_path, question, question_type, progress_callback=None):
+        if progress_callback:
+            progress_callback("🤖 [PEQA] 开始构建回答...")
+            
         instructions = list()
 
         # Context enhancement.
         if information is not None:
+            if progress_callback:
+                progress_callback("🤖 [PEQA] 正在处理地图信息...")
             prompt.polish_information(information)
             instructions.append({"type": "text", "text": str(information)})
         if knowledge is not None:
+            if progress_callback:
+                progress_callback("🤖 [PEQA] 正在注入领域知识...")
             instructions.append({"type": "text", "text": str(knowledge)})
 
         if enhance_prompt:
+            if progress_callback:
+                progress_callback("🤖 [PEQA] 正在选择相关组件...")
+                
             # Component selection.
             selected_components = self.select(question, question_type)
             if selected_components is not None:
                 if information is not None:
+                    if progress_callback:
+                        progress_callback("🤖 [PEQA] 正在准备图像组件...")
+                        
                     for selected_component in selected_components:
                         selected_image_path = os.path.join(common.cache_path(), "det", information["name"], f"{selected_component}_0.png")
                         if os.path.exists(selected_image_path):
@@ -84,6 +99,10 @@ class prompt_enhanced_QA:
                     if len(selected_components) > 0:
                         instructions.append({"type": "text", "text": f"Let's focus more on {', '.join(selected_components)}"})
                     instructions.append({"type": "image_url", "image_url": {"url": api.local_image_to_data_url(image_path)}})
+            
+            if progress_callback:
+                progress_callback("🤖 [PEQA] 正在构建提示词...")
+                
             # Both COT and JSON format + few-shot.
             question_instruction = prompt.ability2instruction(question_type, vision.image_size(image_path))
             instructions.append({"type": "text", "text": f"Instruction: {question_instruction}\n"})
@@ -101,13 +120,25 @@ class prompt_enhanced_QA:
             {"role": "system", "content": prompt.system_prompt},
             {"role": "user", "content": instructions},
         ]
+        
+        if progress_callback:
+            progress_callback("🤖 [PEQA] 正在调用大语言模型...")
+            
         if common.echo:
             print("======================================================")
             print("Image:", image_path, flush=True)
             print("Question Type:", question_type, flush=True)
             print("Question Instruction:", question_instruction, flush=True)
             print("Question:", question, flush=True)
+            
         answer = api.answer_wrapper(messages, structured=True)
+        
+        if progress_callback:
+            progress_callback("🤖 [PEQA] 正在处理模型响应...")
+            
+        if progress_callback:
+            progress_callback("✅ [PEQA] 问答处理完成")
+            
         return answer
 
 

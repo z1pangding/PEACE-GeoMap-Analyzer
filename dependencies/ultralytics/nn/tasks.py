@@ -718,6 +718,7 @@ def torch_safe_load(weight):
     Returns:
         (dict): The loaded PyTorch model.
     """
+    import torch
     from ultralytics.utils.downloads import attempt_download_asset
 
     check_suffix(file=weight, suffix=".pt")
@@ -730,7 +731,13 @@ def torch_safe_load(weight):
                 "ultralytics.yolo.data": "ultralytics.data",
             }
         ):  # for legacy 8.0 Classify and Pose models
-            ckpt = torch.load(file, map_location="cpu")
+            # Use weights_only=False to maintain compatibility with older PyTorch versions
+            # This addresses the PyTorch 2.6+ security enhancement for torch.load
+            try:
+                ckpt = torch.load(file, map_location="cpu", weights_only=False)
+            except TypeError:
+                # Fallback for older PyTorch versions that don't support weights_only parameter
+                ckpt = torch.load(file, map_location="cpu")
 
     except ModuleNotFoundError as e:  # e.name is missing module name
         if e.name == "models":
@@ -750,7 +757,11 @@ def torch_safe_load(weight):
             f"run a command with an official YOLOv8 model, i.e. 'yolo predict model=yolov8n.pt'"
         )
         check_requirements(e.name)  # install missing module
-        ckpt = torch.load(file, map_location="cpu")
+        try:
+            ckpt = torch.load(file, map_location="cpu", weights_only=False)
+        except TypeError:
+            # Fallback for older PyTorch versions that don't support weights_only parameter
+            ckpt = torch.load(file, map_location="cpu")
 
     if not isinstance(ckpt, dict):
         # File is likely a YOLO instance saved with i.e. torch.save(model, "saved_model.pt")

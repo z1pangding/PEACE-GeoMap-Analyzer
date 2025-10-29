@@ -29,6 +29,15 @@ def crop_corners_and_save_image(image, cropped_image_path, relative_size=0.1):
     corner_height = int(height * relative_size)
     corner_width = int(width * relative_size)
 
+    # Ensure minimum size for API compatibility (must be > 10 pixels in both dimensions)
+    min_size = 11
+    corner_height = max(corner_height, min_size)
+    corner_width = max(corner_width, min_size)
+    
+    # Ensure we don't exceed image boundaries
+    corner_height = min(corner_height, height // 2)
+    corner_width = min(corner_width, width // 2)
+
     # Crop the top-left corner
     top_left = image[0:corner_height, 0:corner_width]
     # Crop the top-right corner
@@ -46,7 +55,13 @@ def crop_corners_and_save_image(image, cropped_image_path, relative_size=0.1):
     # Finally, stack the top and bottom combined images vertically
     cropped_image = np.vstack((top_combined, bottom_combined))
     
-    cv2.imwrite(cropped_image_path, cropped_image)
+    # Final size check
+    final_height, final_width = cropped_image.shape[:2]
+    if final_height <= 10 or final_width <= 10:
+        # If still too small, save the original image region instead
+        cv2.imwrite(cropped_image_path, image)
+    else:
+        cv2.imwrite(cropped_image_path, cropped_image)
 
 def calc_image_rgb(image):
     # Return color in RBG order.

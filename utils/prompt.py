@@ -56,6 +56,7 @@ question_ability2type = {
 
     # analyzing
     "analyzing-earthquake_risk": question_type.essay,
+    "analyzing-formation": question_type.essay,
 }
 
 grounding_format =              '这是一道填空题，结合提供的文本信息和图片（宽：$width，高：$height），回答答案并给出分析过程，仅返回JSON格式结果，例如：{"answer": [x_min, y_min, x_max, y_max], "reason", "XXX"}' if common.dataset_source == "cgs" else \
@@ -106,6 +107,7 @@ question_ability2format = {
 
     # analyzing
     "analyzing-earthquake_risk": essay_format,
+    "analyzing-formation": essay_format,
 }
 
 def ability2instruction(ability, image_size):

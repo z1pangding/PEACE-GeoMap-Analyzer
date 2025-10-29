@@ -1,0 +1,34 @@
+PEACE地质图分析系统使用指南
+============================
+
+## 版权信息
+项目基于微软研究院PEACE项目二次开发
+原项目地址: https://github.com/microsoft/PEACE
+
+二次开发单位: 浙江省水文地质工程地质大队（浙江省宁波地质院）
+二次开发人: 基础地质调查研究中心-丁正鹏
+邮箱: zhengpengding@outlook.com
+
+## 第一步：安装Python
+1. 访问 https://www.python.org/ 下载Python 3.10或更高版本
+2. 安装时务必勾选 "Add Python to PATH"
+3. 安装完成后重启电脑
+
+## 第二步：安装依赖
+1. 打开命令提示符（按 Win+R，输入 cmd，回车）
+2. 进入程序所在文件夹（例如：cd C:\PEACE）
+3. 运行以下命令安装依赖：
+   pip install PyQt6 openai dashscope pandas numpy pillow opencv-python
+
+## 第三步：运行程序
+1. 双击 PEACE_GeoMap_Analyzer.exe 运行程序
+2. 首次使用需要配置API密钥：
+   - 点击菜单栏"设置" -> "API配置"
+   - 输入阿里云通义千问API密钥
+   - 选择模型后点击"保存"
+
+## 注意事项
+- 确保网络连接正常
+- 首次运行可能较慢，因为需要加载模型
+- 支持的图片格式：JPG, PNG, BMP, TIF
+- 单个图片文件不超过50MB

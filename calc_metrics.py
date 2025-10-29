@@ -11,20 +11,16 @@ from tqdm import tqdm
 from mimetypes import guess_type
 from collections import defaultdict
 import openai
-from openai import AzureOpenAI
-from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+from openai import OpenAI
 
-azure_endpoint = ""# to be filled.
-identity_id = ""# to be filled.
-token_provider = get_bearer_token_provider(
-    DefaultAzureCredential(managed_identity_client_id=identity_id),
-    "https://cognitiveservices.azure.com/.default")
-api_version = "2024-08-01-preview"
-client = AzureOpenAI(
-    azure_endpoint=azure_endpoint,
-    azure_ad_token_provider=token_provider,
-    api_version=api_version,
-    max_retries=0,
+# 阿里云Qwen API配置
+api_key = "sk-08d3ac8e89f8445486c27a46b0456af3"  # 用户提供的API密钥
+base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"  # 阿里云兼容OpenAI格式的API端点
+model_name = "qwen3-vl-plus"  # 使用的模型
+
+client = OpenAI(
+    api_key=api_key,
+    base_url=base_url
 )
 
 def answer_wrapper(messages, model_name="4o", max_tks=2048, temperature=0.0, structured=False):
@@ -113,11 +109,28 @@ def get_lonlat_range(answer):
     return lon_range, lat_range
 
 def local_image_to_data_url(image_path):
+    api_image_size_limit = 50 * 1024 * 1024  # 50MB limit (增加到50MB以支持更大的地质图文件)
+    
+    # Check file size
+    file_size = os.path.getsize(image_path)
+    if file_size >= api_image_size_limit:
+        raise ValueError(f"图像文件太大 ({file_size/1024/1024:.1f}MB)，请使用小于50MB的图像文件")
+    
+    # Guess the MIME type of the image based on the file extension
     mime_type, _ = guess_type(image_path)
     if mime_type is None:
-        mime_type = "application/octet-stream"
+        mime_type = "application/octet-stream"  # Default MIME type if none is found
+    
+    # Read and encode the image file
     with open(image_path, "rb") as image_file:
         base64_encoded_data = base64.b64encode(image_file.read()).decode("utf-8")
+    
+    # Double check the encoded size
+    encoded_size = len(base64_encoded_data)
+    if encoded_size >= api_image_size_limit * 4/3:  # Base64 encoding increases size by ~33%
+        raise ValueError(f"图像编码后太大，请使用更小的图像文件")
+    
+    # Construct the data URL
     return f"data:{mime_type};base64,{base64_encoded_data}"
 
 def judge_essay(image_path, answer, model_answer):

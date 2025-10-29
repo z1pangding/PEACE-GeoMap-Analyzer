@@ -34,15 +34,25 @@ class domain_knowledge_injection:
                 selected_knowledge[key] = knowledge[key]
         return selected_knowledge
 
-    def consult(self, question, meta):
+    def consult(self, question, meta, progress_callback=None):
         if meta is None:
-            print("Missing metadata in DKI module", flush=True)
+            if progress_callback:
+                progress_callback("❌ [DKI] 缺少元数据")
             return None
 
+        if progress_callback:
+            progress_callback("🧠 [DKI] 检查知识库缓存...")
+            
         knowledge_path = os.path.join(common.cache_path(), "knowledge", meta["name"] + ".json")
         if os.path.exists(knowledge_path):
-            knowledge = json.loads(open(knowledge_path).read())
+            with open(knowledge_path, "r", encoding="utf-8") as f:
+                knowledge = json.loads(f.read())
+            if progress_callback:
+                progress_callback("✅ [DKI] 从缓存加载知识库")
         else:
+            if progress_callback:
+                progress_callback("🧠 [DKI] 正在解析经纬度坐标...")
+                
             longitude_range = meta["information"]["longitude"]
             longitude_range = list(map(lambda x: common.convert_to_decimal(x), longitude_range))
             latitude_range = meta["information"]["latitude"]
@@ -51,22 +61,45 @@ class domain_knowledge_injection:
             max_lon = max(longitude_range)
             min_lat = min(latitude_range)
             max_lat = max(latitude_range)
+            
             if common.is_valid_longitude(min_lon) and \
             common.is_valid_longitude(max_lon) and \
             common.is_valid_latitude(min_lat) and \
             common.is_valid_latitude(max_lat):
+                
+                if progress_callback:
+                    progress_callback("🧠 [DKI] 正在获取地震学知识...")
+                    
                 seismic_data = self.seismologist.get_knowledge(min_lon, min_lat, max_lon, max_lat)
+                
+                if progress_callback:
+                    progress_callback("🧠 [DKI] 正在获取地理学知识...")
+                    
                 geographical_data = self.geographer.get_knowledge(min_lon, min_lat, max_lon, max_lat)
+                
+                if progress_callback:
+                    progress_callback("🧠 [DKI] 正在整合知识库...")
+                    
                 knowledge = seismic_data | geographical_data
             else:
                 knowledge = dict()
             
+            if progress_callback:
+                progress_callback("🧠 [DKI] 正在保存知识库到缓存...")
+                
             # output external knowledge of geologic map.
             common.create_folder_by_file_path(knowledge_path)
             with open(knowledge_path, "w", encoding="utf-8") as f:
                 f.write(json.dumps(knowledge, indent=4, ensure_ascii=False))
         
+        if progress_callback:
+            progress_callback("🧠 [DKI] 正在选择相关知识...")
+            
         selected_knowledge = self.select(question, knowledge)
+        
+        if progress_callback:
+            progress_callback("✅ [DKI] 领域知识注入完成")
+            
         return selected_knowledge
 
 

@@ -5,7 +5,8 @@ class rock_type_and_age_db:
     def __init__(self, mode):
         self.rock_name2type = dict()
         db_path = f"./dependencies/knowledge/k2_rock_{mode}.json"
-        rock_types = json.loads(open(db_path).read())
+        with open(db_path, 'r', encoding='utf-8') as f:
+            rock_types = json.loads(f.read())
         for rock_type in rock_types:
             rock_name = rock_type["rock_name"].lower()
             rock_type = rock_type[f"rock_value"].lower()

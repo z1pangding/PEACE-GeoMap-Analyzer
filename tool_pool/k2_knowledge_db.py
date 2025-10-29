@@ -19,31 +19,31 @@ class k2_knowledge_db:
         self.embedding_model = AutoModel.from_pretrained("jinaai/jina-embeddings-v3", trust_remote_code=True)
 
         # load k2 expert knowledge base of rock type
-        with open("./dependencies/knowledge/k2_rock_type.json", "r") as f:
+        with open("./dependencies/knowledge/k2_rock_type.json", "r", encoding="utf-8") as f:
             rock_type_kb = json.load(f)
         self.rock_type_kb = {item["rock_value"]: item["rock_name"] for item in rock_type_kb}
         self.rock_type_embeddings = self.embedding_model.encode(list(self.rock_type_kb.keys()), task="text-matching")
 
         # load k2 expert knowledge base of rock age
-        with open("./dependencies/knowledge/k2_rock_age.json", "r") as f:
+        with open("./dependencies/knowledge/k2_rock_age.json", "r", encoding="utf-8") as f:
             rock_age_kb = json.load(f)
         self.rock_age_kb = {item["rock_value"]: item["rock_name"] for item in rock_age_kb}
         self.rock_age_embeddings = self.embedding_model.encode(list(self.rock_age_kb.keys()), task="text-matching")
 
         # load k2 expert knowledge base of rock detail
-        with open("./dependencies/knowledge/k2_rock_detail.json", "r") as f:
+        with open("./dependencies/knowledge/k2_rock_detail.json", "r", encoding="utf-8") as f:
             rock_detail_kb = json.load(f)
         self.rock_detail_kb = {item["id"]: item["answer"] for item in rock_detail_kb}
         self.rock_detail_embeddings = self.embedding_model.encode(list(self.rock_detail_kb.keys()), task="text-matching")
 
         # load k2 expert knowledge base of component usage
-        with open("./dependencies/knowledge/k2_usage.json", "r") as f:
+        with open("./dependencies/knowledge/k2_usage.json", "r", encoding="utf-8") as f:
             component_usage_kb = json.load(f)
         self.component_usage_kb = {item["question"]: item["answer"] for item in component_usage_kb}
         self.component_usage_key_embeddings = self.embedding_model.encode(list(self.component_usage_kb.keys()), task="text-matching")
 
         # load k2 expert knowledge base of downstream task
-        with open("./dependencies/knowledge/k2_expertise.json", "r") as f:
+        with open("./dependencies/knowledge/k2_expertise.json", "r", encoding="utf-8") as f:
             downstream_task_kb = json.load(f)
         self.downstream_task_kb = {item["question"]: item["answer"] for item in downstream_task_kb}
         self.downstream_task_key_embeddings = self.embedding_model.encode(list(self.downstream_task_kb.keys()), task="text-matching")

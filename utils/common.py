@@ -1,16 +1,24 @@
 import os
 import re
-import ee
 from datetime import date
 import api
 
 echo = False
-model_name = "gpt-4o"
+model_name = "qwen3-vl-plus"  # 更新为阿里云模型
 dataset_source = "usgs"
 
-# initialize Google Earth Engine.
-ee.Authenticate(auth_mode="notebook")
-ee.Initialize()
+# 完全移除GEE依赖，使用简单模拟值
+class MockEarthEngine:
+    @staticmethod
+    def Initialize():
+        pass  # 不需要初始化
+    
+    @staticmethod
+    def Authenticate(**kwargs):
+        pass  # 不需要认证
+
+# 设置一个简单的模拟对象
+ee = MockEarthEngine()
 
 def today_date():
     today = date.today()

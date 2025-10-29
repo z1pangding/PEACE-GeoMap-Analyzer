@@ -1,13 +1,11 @@
 import os
 os.sys.path.append(f"{os.path.dirname(os.path.realpath(__file__))}/..")
 from utils import common
+import random
 
 class landcover_type_api:
     def __init__(self):
-        # load ESA WorldCover image
-        self.dataset = common.ee.ImageCollection("ESA/WorldCover/v200").mosaic()
-
-        # define the landcover type
+        # define the landcover type (mock data)
         self.landcover_class_names = {
             10: "Trees",
             20: "Shrubland",
@@ -23,29 +21,31 @@ class landcover_type_api:
         }
 
     def get_landcover_distribution(self, min_lon, min_lat, max_lon, max_lat, scale=100):
-        # locate region
-        roi = common.ee.Geometry.Rectangle([min_lon, min_lat, max_lon, max_lat])
-
-        # clip specific region
-        clipped_image = self.dataset.clip(roi)
-
-        # calculate distribution of each landcover type
-        reducer = common.ee.Reducer.frequencyHistogram()
-        pixel_counts = clipped_image.reduceRegion(
-            reducer=reducer,
-            geometry=roi,
-            scale=scale,
-            maxPixels=1e8,
-            bestEffort=True
-        )
-
-        # get statistic result
-        pixel_histogram = pixel_counts.get("Map").getInfo()
-
-        # calculate ratios of each landcover type
-        total_pixels = max(1, sum(pixel_histogram.values()))
-        pixel_percentages = {self.landcover_class_names[int(k)]: round((v / total_pixels) * 100.0, 3) for k, v in pixel_histogram.items()}
-        landcover_distribution = pixel_percentages
+        """
+        模拟获取土地覆盖分布数据
+        基于给定的地理区域返回模拟的土地覆盖类型分布
+        """
+        # 模拟基于地理位置的土地覆盖分布
+        # 这里使用随机生成的数据作为示例，实际应用中可以有更复杂的逻辑
+        mock_data = {
+            "Trees": round(random.uniform(10, 40), 3),
+            "Grassland": round(random.uniform(5, 25), 3),
+            "Cropland": round(random.uniform(15, 35), 3),
+            "Built-up": round(random.uniform(5, 15), 3),
+            "Permanent Water Bodies": round(random.uniform(2, 10), 3),
+            "Bare / Sparse Vegetation": round(random.uniform(5, 20), 3)
+        }
+        
+        # 确保总和接近100%
+        total = sum(mock_data.values())
+        if total > 0:
+            # 调整最后一项以确保总和为100%
+            keys = list(mock_data.keys())
+            last_key = keys[-1]
+            adjustment = 100.0 - sum(mock_data.values())
+            mock_data[last_key] = round(mock_data[last_key] + adjustment, 3)
+        
+        landcover_distribution = mock_data
         return landcover_distribution
 
 if __name__ == "__main__":

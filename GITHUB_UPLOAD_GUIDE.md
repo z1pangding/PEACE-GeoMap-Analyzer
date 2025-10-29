@@ -1,5 +1,36 @@
 # PEACE地质图分析系统 - GitHub上传指南
 
+## 项目背景
+
+**PEACE (Empowering Geologic Map Holistic Understanding with MLLMs)** 是一个基于多模态大语言模型的地质图理解系统。本项目在微软研究院原PEACE项目基础上，由浙江省水文地质工程地质大队（浙江省宁波地质院）基础地质调查研究中心进行二次开发。
+
+**原项目地址**: https://github.com/microsoft/PEACE  
+**原论文**: @article{huang2025peace, title={PEACE: Empowering Geologic Map Holistic Understanding with MLLMs}, author={Huang, Yangyu and Gao, Tianyi and Xu, Haoran and Zhao, Qihao and Song, Yang and Gui, Zhipeng and Lv, Tengchao and Chen, Hao and Cui, Lei and Li, Scarlett and others}, journal={arXiv preprint arXiv:2501.06184}, year={2025} }
+
+## 二次开发改进
+
+### 主要改进内容
+
+1. **GUI界面优化**
+   - 重新设计了用户友好的图形界面
+   - 添加了实时进度显示
+   - 集成了模块状态指示器
+   - 优化了用户交互体验
+
+2. **EXE分发包**
+   - 创建了完整的EXE打包流程
+   - 最小化依赖以减小文件大小
+   - 提供一键安装和使用指南
+
+3. **中文支持**
+   - 完整的中文界面支持
+   - 优化了中文环境下的显示效果
+
+4. **API配置优化**
+   - 安全的API配置方式
+   - 支持环境变量配置
+   - 避免了硬编码敏感信息
+
 ## 上传的文件列表
 
 ### 根目录文件
@@ -32,13 +63,13 @@
 - gui_chinese_support.py - 中文支持GUI
 - api_config_dialog.py - API配置对话框
 
-### 模块文件 (modules/)
+### 模块文件 (modules/):
 - __init__.py
 - HIE.py - 分层信息提取模块
 - DKI.py - 领域知识注入模块
 - PEQA.py - 增强提示问答模块
 
-### 工具池文件 (tool_pool/)
+### 工具池文件 (tool_pool/):
 - __init__.py
 - active_fault_db.py
 - history_earthquake_db.py
@@ -49,13 +80,13 @@
 - population_density_api.py
 - rock_type_and_age_db.py
 
-### 智能体文件 (agents/)
+### 智能体文件 (agents/):
 - __init__.py
 - geographer.py - 地理学智能体
 - geologist.py - 地质学智能体
 - seismologist.py - 地震学智能体
 
-### 工具函数 (utils/)
+### 工具函数 (utils/):
 - __init__.py
 - api.py - API接口（已移除硬编码密钥）
 - common.py - 通用函数
@@ -70,6 +101,8 @@
 ### 文档文件
 - INSTALLATION_GUIDE.md - 安装教程
 - LICENSE_INFO.md - 许可证信息
+- ENV_CONFIG_GUIDE.md - 环境变量配置指南
+- GITHUB_UPLOAD_GUIDE.md - GitHub上传指南
 
 ## 上传步骤
 
@@ -143,6 +176,13 @@ PEACE-GeoMap-Analyzer/
 3. **API配置**：用户需要自行获取API密钥并配置环境变量
 4. **依赖管理**：通过requirements.txt管理包依赖
 5. **版权信息**：保留了原微软PEACE项目的引用信息和许可证
+
+## 二次开发信息
+
+- **开发单位**: 浙江省水文地质工程地质大队（浙江省宁波地质院）
+- **开发人员**: 基础地质调查研究中心-丁正鹏
+- **邮箱**: zhengpengding@outlook.com
+- **开发时间**: 2025年10月
 
 ## 后续维护
 

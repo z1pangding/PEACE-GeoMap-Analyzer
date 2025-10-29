@@ -1,5 +1,12 @@
 # 环境变量配置指南
 
+## 项目背景
+
+**PEACE (Empowering Geologic Map Holistic Understanding with MLLMs)** 是一个基于多模态大语言模型的地质图理解系统。本项目在微软研究院原PEACE项目基础上，由浙江省水文地质工程地质大队（浙江省宁波地质院）基础地质调查研究中心进行二次开发。
+
+**原项目地址**: https://github.com/microsoft/PEACE  
+**原论文**: @article{huang2025peace, title={PEACE: Empowering Geologic Map Holistic Understanding with MLLMs}, author={Huang, Yangyu and Gao, Tianyi and Xu, Haoran and Zhao, Qihao and Song, Yang and Gui, Zhipeng and Lv, Tengchao and Chen, Hao and Cui, Lei and Li, Scarlett and others}, journal={arXiv preprint arXiv:2501.06184}, year={2025} }
+
 ## API密钥配置
 
 本项目使用阿里云DashScope API，需要配置环境变量才能正常运行。
@@ -89,3 +96,10 @@ else:
 2. 确认API密钥是否有效
 3. 检查网络连接
 4. 验证API配额是否充足
+
+## 二次开发信息
+
+- **开发单位**: 浙江省水文地质工程地质大队（浙江省宁波地质院）
+- **开发人员**: 基础地质调查研究中心-丁正鹏
+- **邮箱**: zhengpengding@outlook.com
+- **开发时间**: 2025年10月

@@ -1,140 +1,135 @@
-# Em<a>p</a>owering G<a>e</a>ologic M<a>a</a>p Holisti<a>c</a> Und<a>e</a>rstanding with MLLMs
-<!-- # PEACE: Em**p**owering G**e**ologic M**a**p Holisti**c** Und**e**rstanding with MLLMs -->
+# PEACE - 地质图智能分析系统
 
-<p align="center">
- <img src="https://img.shields.io/badge/Task-GeoMap-orange" alt="Task" /> 
- <img src="https://img.shields.io/badge/Data-Released-green" alt="Data" /> 
- <img src="https://img.shields.io/badge/Code_License-MIT-blue" alt="Code" />
-</p>
+## 项目概述
 
-<p align="center">
-  <a href="https://arxiv.org/abs/2501.06184"><b>[📜 Paper]</b></a> •
-  <a href="https://huggingface.co/datasets/microsoft/PEACE"><b>[🤗 HF Dataset]</b></a> •
-  <a href="https://github.com/microsoft/PEACE"><b>[🐱 GitHub Code]</b></a>
-  <a href="https://www.youtube.com/watch?v=NukDoCJgU-s"><b>[🎞️ YouTube Video]</b></a>
-</p>
+**PEACE (Empowering Geologic Map Holistic Understanding with MLLMs)** 是一个基于多模态大语言模型的地质图理解系统。本项目在微软研究院原PEACE项目基础上，由浙江省水文地质工程地质大队（浙江省宁波地质院）基础地质调查研究中心进行二次开发。
 
-<p align="center">
-    <img src="./images/PEACE_Cover.png" width="800">
-</p>
+**原项目地址**: https://github.com/microsoft/PEACE  
+**原论文**: @article{huang2025peace, title={PEACE: Empowering Geologic Map Holistic Understanding with MLLMs}, author={Huang, Yangyu and Gao, Tianyi and Xu, Haoran and Zhao, Qihao and Song, Yang and Gui, Zhipeng and Lv, Tengchao and Chen, Hao and Cui, Lei and Li, Scarlett and others}, journal={arXiv preprint arXiv:2501.06184}, year={2025} }
 
-## 📢 News and Updates
-- 2025/01/10: 🔥GitHub Code repo (GeoMap-Agent) released.
-- 2025/01/10: 🔥HuggingFace Dataset repo (GeoMap-Bench) released.
-- 2025/01/13: 🔥Arxiv paper (PEACE) released.
-- 2025/02/27: 🔥Accepted by CVPR'25.
-- 2025/03/25: 🔥Add metrics measurement script.
-- 2025/04/22: 🔥Add interactive demo video.
-## 📖 Table of Contents
+## 二次开发改进
 
-- [Introduction](#-introduction)
-- [GeoMap-Bench](#-geomap-bench)
-- [GeoMap-Agent](#-geomap-agent)
-- [Leaderboard](#-leaderboard)
-- [Data Display](#-data-display)
-- [Quickstart](#-quick-start)
-- [Disclaimer](#-disclaimer)
-- [Citation](#-citation)
+### 主要改进内容
 
-## 🌟 Introduction
-Geologic map, as a fundamental diagram in geology science, provides critical insights into the structure and composition of Earth's subsurface and surface. These maps are indispensable in various fields, including disaster detection, resource exploration, and civil engineering.
+1. **GUI界面优化**
+   - 重新设计了用户友好的图形界面
+   - 添加了实时进度显示
+   - 集成了模块状态指示器
+   - 优化了用户交互体验
 
-## 📖 GeoMap-Bench
-We present **GeoMap-Bench**, a new benchmark consisting of 124 geologic maps and 3,864 multimodal multiple-choice questions with diverse annotations. The distribution of questions in the GeoMap-Bench. It consists of 25 task types that measure critical geological map interpretation abilities across **five** aspects: *grounding, extracting, referring, reasoning, and analyzing*.
+2. **EXE分发包**
+   - 创建了完整的EXE打包流程
+   - 最小化依赖以减小文件大小
+   - 提供一键安装和使用指南
 
-<p align="center">
-    <img src="./images/GeoMap_Bench.png" width="600">
-</p>
+3. **中文支持**
+   - 完整的中文界面支持
+   - 优化了中文环境下的显示效果
 
-## 🌍 GeoMap-Agent
-We introduce **GeoMap-Agent**, the inaugural agent designed for geologic map understanding, which features three modules: Hierarchical Information Extraction(HIE), Domain Knowledge Injection (DKI), and Prompt-enhanced Question Answering (PEQA). Inspired by the interdisciplinary collaboration among human scientists, an AI expert group acts as consultants, utilizing a diverse tool pool to comprehensively analyze questions.
+4. **API配置优化**
+   - 安全的API配置方式
+   - 支持环境变量配置
+   - 避免了硬编码敏感信息
 
-<p align="center">
-    <img src="./images/GeoMap_Agent.png" width="800">
-</p>
+## 系统架构
 
-## 🧮 Leaderboard
-Through comprehensive experiments, GeoMap-Agent achieves an overall score of 0.811 on GeoMap-Bench, significantly outperforming 0.369 of GPT-4o.
+### 三个核心模块
+1. **HIE (Hierarchical Information Extraction)** - 分层信息提取模块
+2. **DKI (Domain Knowledge Injection)** - 领域知识注入模块
+3. **PEQA (Prompt-enhanced Question Answering)** - 增强提示问答模块
 
-| Method               | Extracting | Grounding | Referring | Reasoning | Analyzing | Overall |
-|----------------------|------------|-----------|-----------|-----------|-----------|---------|
-| Random               | 0          | 0         | 0.250     | 0.250     | 0         | 0.100   |
-| GPT-4o               | 0.219      | 0.128     | 0.378     | 0.507     | 0.612     | 0.369   |
-| GeoMap-Agent         | 0.832      | 0.920     | 0.886     | 0.588     | 0.831     | 0.811   |
+## 软件界面展示
 
-## 🔍 Data Display
-We visualize the components of a typical geologic map, highlighting the complex nature of *cartographic generalization*. Additionally, we showcase sample questions from GeoMap-Bench and demonstrate how our GeoMap-Agent integrates various sources of contextual information to address them.
-<p align="center">
-    <img src="./images/GeoMap_Sample.png" width="800">
-</p>
+![软件界面示例](屏幕截图 2025-10-29 164134.png)
+*图1: 主界面展示*
 
-## ⏩ Quick Start
-<details open>
-<summary>Installation</summary>
+![问题配置界面](屏幕截图 2025-10-29 164252.png)
+*图2: 问题配置界面*
 
-<ul><li>Step1: Clone GeoMap-Agent code repository</li></ul>
-<div class="language-plaintext highlighter-rouge">
-<pre class="highlight">
-<code>git clone https://github.com/microsoft/PEACE.git
-cd PEACE</code>
-</pre>
-</div>
+![分析过程显示](屏幕截图 2025-10-29 164814.png)
+*图3: 分析过程实时显示*
 
-<ul><li>Step2: Clone GeoMap-Bench dataset repository</li></ul>
-<div class="language-plaintext highlighter-rouge">
-<pre class="highlight">
-<code>git lfs install
-git lfs clone https://huggingface.co/datasets/microsoft/PEACE data</code>
-</pre>
-</div>
+![结果展示界面](屏幕截图 2025-10-29 165113.png)
+*图4: 分析结果展示*
 
-<ul><li>Step3: Download layout detection models</li></ul>
-<div class="language-plaintext highlighter-rouge">
-<pre class="highlight">
-<code>pip install gdown
-gdown https://drive.google.com/uc?id=1f7dUdfA_W8He9czG6SoYQBmUsSPrA6MZ
-unzip models.zip -d dependencies</code>
-</pre>
-</div>
+![模块状态监控](屏幕截图 2025-10-29 165317.png)
+*图5: HIE/DKI/PEQA模块状态监控*
 
-<ul><li>Step4: Install dependencies</li></ul>
-<div class="language-plaintext highlighter-rouge">
-<pre class="highlight">
-<code>pip install -r requirements.txt</code>
-</pre>
-</div>
+## 功能特性
 
-<ul><li>Step5: Configure LLMs API endpoint and key in utils/api.py</li></ul>
+- 🎯 **智能问题检测**: 自动识别问题类型并选择最优分析策略
+- 📊 **实时进度监控**: 可视化显示HIE、DKI、PEQA三大模块的处理状态
+- 🌍 **多语言支持**: 支持中文界面和地质图分析
+- 📈 **模块化设计**: 采用清晰的模块化架构，便于扩展和维护
+- 🔐 **安全API配置**: 通过环境变量配置API密钥，避免泄露风险
 
-</details>
+## 支持的问题类型
 
+1. **提取类 (extracting)**
+   - 图幅名称提取
+   - 比例尺提取
+   - 经纬度提取
+   - 索引图提取
 
-<details open>
-<summary>Evaluation</summary>
+2. **定位类 (grounding)**
+   - 标题定位
+   - 主图定位
+   - 比例尺定位
+   - 图例定位
 
- <div class="language-plaintext highlighter-rouge">
-<pre class="highlight">
-<code>python eval.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs
-python calc_metrics.py --copilot_mode HIE,DKI,PEQA --dataset_source usgs</code>
-</pre>
-</div>
+3. **指代类 (referring)**
+   - 根据颜色指代岩石
 
-</details>
+4. **推理类 (reasoning)**
+   - 区域对比推理
+   - 断层存在性推理
 
-## ⚡ Disclaimer
-Due to the inherent limitations of large language models, issues such as hallucinations may occur.
+5. **分析类 (analyzing)**
+   - 地层分析
+   - 地震风险评估
 
+## 安装指南
 
-## 🔗 Citation
-```
-@article{huang2025peace,
-  title={PEACE: Empowering Geologic Map Holistic Understanding with MLLMs},
-  author={Huang, Yangyu and Gao, Tianyi and Xu, Haoran and Zhao, Qihao and Song, Yang and Gui, Zhipeng and Lv, Tengchao and Chen, Hao and Cui, Lei and Li, Scarlett and others},
-  journal={arXiv preprint arXiv:2501.06184},
-  year={2025}
-}
+### 依赖安装
+
+```bash
+pip install -r requirements.txt
 ```
 
-## 👀 License
-This repository is licensed under the [MIT](https://github.com/microsoft/PEACE/blob/main/LICENSE) License.
-The use of Ultralytics library is subject to the [AGPL-3.0](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) License.
+### 环境变量配置
+
+```bash
+# 设置API密钥
+export DASHSCOPE_API_KEY="your-api-key-here"
+
+# 设置模型名称（可选，默认为qwen-vl-max）
+export MODEL_NAME="qwen3-vl-plus"
+```
+
+## 使用方法
+
+1. 启动GUI界面：
+   ```bash
+   python gui_main.py
+   ```
+
+2. 上传地质图文件
+3. 输入或选择问题类型
+4. 配置API密钥（首次使用）
+5. 点击"开始分析"按钮
+6. 查看分析结果和详细日志
+
+## 二次开发信息
+
+- **开发单位**: 浙江省水文地质工程地质大队（浙江省宁波地质院）
+- **开发人员**: 基础地质调查研究中心-丁正鹏
+- **邮箱**: zhengpengding@outlook.com
+- **开发时间**: 2025年10月
+
+## 许可证
+
+本项目遵循原项目的MIT许可证协议。
+
+## 致谢
+
+感谢微软研究院提供的原PEACE项目作为基础。

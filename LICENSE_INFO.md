@@ -1,5 +1,36 @@
 # PEACE地质图分析系统 - 版权与许可证信息
 
+## 项目背景
+
+**PEACE (Empowering Geologic Map Holistic Understanding with MLLMs)** 是一个基于多模态大语言模型的地质图理解系统。本项目在微软研究院原PEACE项目基础上，由浙江省水文地质工程地质大队（浙江省宁波地质院）基础地质调查研究中心进行二次开发。
+
+**原项目地址**: https://github.com/microsoft/PEACE  
+**原论文**: @article{huang2025peace, title={PEACE: Empowering Geologic Map Holistic Understanding with MLLMs}, author={Huang, Yangyu and Gao, Tianyi and Xu, Haoran and Zhao, Qihao and Song, Yang and Gui, Zhipeng and Lv, Tengchao and Chen, Hao and Cui, Lei and Li, Scarlett and others}, journal={arXiv preprint arXiv:2501.06184}, year={2025} }
+
+## 二次开发改进
+
+### 主要改进内容
+
+1. **GUI界面优化**
+   - 重新设计了用户友好的图形界面
+   - 添加了实时进度显示
+   - 集成了模块状态指示器
+   - 优化了用户交互体验
+
+2. **EXE分发包**
+   - 创建了完整的EXE打包流程
+   - 最小化依赖以减小文件大小
+   - 提供一键安装和使用指南
+
+3. **中文支持**
+   - 完整的中文界面支持
+   - 优化了中文环境下的显示效果
+
+4. **API配置优化**
+   - 安全的API配置方式
+   - 支持环境变量配置
+   - 避免了硬编码敏感信息
+
 ## 原项目信息
 
 **项目名称**: PEACE (Empowering Geologic Map Holistic Understanding with MLLMs)  
